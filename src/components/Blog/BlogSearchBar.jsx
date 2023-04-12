@@ -61,29 +61,14 @@ const BlogSearchBar = ({ backArrow }) => {
                     results.push(doc.data())
                 })
             })
-        // const q4 = db
-        // .collection('posts')
-        // .where("blogCategory", "array-contains", query)
-        // .get()
-        // .then((querySnapshot) => {
-        //     querySnapshot.forEach((doc) => {
-        //         results.push(doc.data())
-        //     })
-        // })
+      
 
         await Promise.all([q1, q2, q3])
-
-
         setResults(searchResults)
-        //    console.log(searchResults, query)
-        // return results
 
     }
 
     useEffect(() => {
-
-        // if(searchRef !==false) handleIconClick();
-
         if (searchedTerm && !results.length) {
             MainSearch(searchedTerm)
             setOpen(true)
@@ -93,11 +78,10 @@ const BlogSearchBar = ({ backArrow }) => {
         else {
             // MainSearch(searchedTerm)
             const timeOutId = setTimeout(() => MainSearch(searchedTerm), 500);
-            // console.log('second block running')
 
             return () => {
                 clearTimeout(timeOutId)
-                // console.log('third block running')
+         
             }
         }
 

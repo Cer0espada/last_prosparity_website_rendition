@@ -72,27 +72,6 @@ const BlogCreatorNew = () => {
 
     }
 
-    // const [formData, setFormData] = useState({
-    //     author:"",
-    //     category:"",
-    //     title:"",
-    //     description:"",
-    //     date:"",
-    //     imageCaption:"",
-    //     quillDelta:""
-    // });
-
-
-
-    // const toTitleCase = (str) => {
-    //     return str.replace(
-    //         /\w\S*/g,
-    //         function(txt) {
-    //         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    //         }
-    //     );
-    // }
-
     const toTitleCase = (str) => {
 
         const exceptions = ["and", "the", "a", "an", "for", "to", "but", "at", "by", "is", "it", "of"];
@@ -155,7 +134,7 @@ const BlogCreatorNew = () => {
                 }
             }
 
-            return listIndex
+            return listIndex++
         }
 
 

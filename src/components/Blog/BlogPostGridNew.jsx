@@ -21,14 +21,6 @@ const BlogPostGridNew = ({ title, SearchPage, SearchedTag, Topic }) => {
     const { sorted, filtered, setSearchedPosts } = useContext(BlogGridContext)
 
     const { width } = useViewport();
-    // const posts = [
-    //         <BlogMods></BlogMods>,
-    //         <BlogMods></BlogMods>,
-    //         <BlogMods></BlogMods>,
-    //         <BlogMods></BlogMods>,
-    //         <BlogMods></BlogMods>,
-    //         <BlogMods></BlogMods>
-    //     ]
 
     const titleArray = [
         { name: "All Categories", classed: "regular" },
@@ -145,27 +137,6 @@ const BlogPostGridNew = ({ title, SearchPage, SearchedTag, Topic }) => {
             })
     }
 
-    // const handleFiltering = (filtered, sorted) => {
-    //     //need to complete recent and trending
-
-    //     switch(filtered){
-    //         case "All Categories":
-    //             return posts
-    //         case "Happening Now":
-    //              setFilteredPosts(posts.filter(item => item.blogCategory !=="Happening Now"))
-    //         case "Financial Literacy":
-    //              setFilteredPosts(posts.filter(item => item.blogCategory !=="Financial Literacy"))
-    //         case "Black Female Excellence":
-    //              setFilteredPosts(posts.filter(item => item.blogCategory !=="Black Female Excellence"))
-    //         case "Education":
-    //              setFilteredPosts(posts.filter(item => item.blogCategory !=="Education"))
-    //         case "Prosparity":
-    //              setFilteredPosts(posts.filter(item => item.blogCategory !=="Prosparity"))
-    //         default:
-    //             return
-    //     }
-    // }
-
     useEffect(() => {
         window.scroll({
             bottom: 1000,
@@ -250,8 +221,6 @@ const BlogPostGridNew = ({ title, SearchPage, SearchedTag, Topic }) => {
                                 titleLink={item.titleLink}
                             />
                         ))
-
-
                 }
 
                 {posts.length === 0 &&
@@ -273,7 +242,6 @@ const BlogPostGridNew = ({ title, SearchPage, SearchedTag, Topic }) => {
                         onChange={setCurrent}
                     />
                 </div>
-
             </section>
         </section>
 
