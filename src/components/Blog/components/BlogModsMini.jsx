@@ -41,8 +41,6 @@ const BlogModsMini = ({ addedClass, imgSrc, category, title, description, author
                             <h2 className={`blog-mods-mini__text-container--heading-container__blog-category ${toggleClass(category)}`}>{category}</h2>
                             <h2 className="blog-mods-mini__text-container--heading-container__blog-heading regular">{truncate(title)}</h2>
                         </div>
-
-
                         <p className="blog-mods-mini__text-container--author-info">{`${author} | ${date}`}</p>
 
                     </div>

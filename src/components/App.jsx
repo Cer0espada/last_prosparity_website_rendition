@@ -84,7 +84,7 @@ const App = () => {
                             <Route path="/advisors" exact component={Advisors}></Route>
                             <Route path="/advisors/advisor/:id" exact component={AdvisorsPage}></Route>
                             <Route path="/blog" exact component={BlogHomePage}></Route>
-                            {/* <PrivateRoute path="/blog/creator/new" exact component={BlogCreatorNew}></PrivateRoute> */}
+                            <PrivateRoute path="/blog/creator/new" exact component={BlogCreatorNew}></PrivateRoute>
                             <Route path="/sign-up" exact component={SignUp}></Route>
                             <Route path="/blog/:id" exact component={BlogPage}></Route>
                             <Route path="/blog/topic/:id" exact component={BlogPostTopicPage}></Route>

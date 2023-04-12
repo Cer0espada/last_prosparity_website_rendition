@@ -173,16 +173,11 @@ const BlogCreatorNew = () => {
         console.log(blogRef)
         const blog_id = blogRefDesc.docs[0].id
         console.log(blog_id)
-
-        //     const blogRef = db.collection('posts').where("uuid", "==", blog_uuid).get()
-        //     console.log(blogRef)
-        //     const blog_id = blogRef.docs[0].id
+        
         //    console.log(blog_id)
 
         UpdateAuthorWithBlogPost(author_id, blog_id);
         // UpdateBlogWithAuthor(blog_id, author_id);
-
-        // CreateBlogPost)
 
         //updates with ids image path references 
         // UpdateBlogPost(blogId, authorId, quillInfo.value, title, imageUrl)

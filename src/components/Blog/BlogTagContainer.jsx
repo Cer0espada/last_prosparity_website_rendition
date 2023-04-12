@@ -23,7 +23,6 @@ const BlogTagContainer = ({ tagName, addedClass, category, trending }) => {
                 querySnapshot.forEach((doc) => results.push(doc.data()));
                 setThings(results)
             })
-        // return results
     }
 
     const QueryForCategoryAndTag = async (query, category) => {

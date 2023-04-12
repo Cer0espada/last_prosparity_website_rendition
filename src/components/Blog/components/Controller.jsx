@@ -16,9 +16,6 @@ export const CreateAuthor = async (first_name, last_name, created_at, imgPath) =
 
 
     const uuid = uuidv4()
-    // const id = uuid
-    // const newDoc = db.collection('authors').doc()
-    // const newDocId = newDoc.id
 
     db.collection('authors').add({
         first_name: first_name,
@@ -102,8 +99,6 @@ export const CreateBlogPost = async (html, author, authorid, authorImg, blogCate
     })
 
         .then((docRef) => {
-
-            // docId = docRef.id
             console.log(`New Blog Post created with ID: ${docRef.id}`)
 
         })
@@ -138,13 +133,6 @@ export const UploadAuthorImage = async (image, imageName) => {
 
 export const UpdateBlogPost = async (id, author_id, html, title, imgPath) => {
     const existingRef = db.collection('posts').get(id);
-
-    //    console.log(existingRef.id)
-    //    if(!existingRef.id){
-    //         new Error('Author already exists')
-    //         console.error('Author already exists')
-    //         return
-    //     };
 
     existingRef.update({
         HTMLtext: html,
