@@ -1,0 +1,133 @@
+.blog-post-topic-page-container {
+    grid-row: 1/20;
+    grid-column: 1/-1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.blog-post-topic-page {
+
+
+    &__content-container {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        max-width: 75em;
+        width: 100%;
+        justify-items: center;
+        padding-bottom: 10rem;
+        box-sizing: border-box;
+        row-gap: 2rem;
+
+        @include respond(mbair){
+            width: 95vw;
+        }
+
+        hr{
+            @include respond(mbair){
+                width: 95vw;
+            }
+        }
+    }
+
+    &__main-jumbotron{
+        display: flex;
+        flex-direction: row;
+
+        height: max-content;
+
+        @include respond(tab-port){
+            flex-direction: column;
+        }
+
+
+        &--left-container{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            color: $color-primary-purple;
+
+            @include respond(tab-port){
+                width: 100%;
+
+                margin-bottom: 1rem;
+            }
+            
+            svg{
+                max-width: 50px;
+                max-height: 50px;
+            }
+
+            i{
+                font-size: 8rem;
+            }
+            // & * >{
+            //     padding-bottom: 4rem;
+                
+            // }
+        }
+
+        &--left{
+
+            &__svg{
+                max-width: 75px;
+                max-height: 75px;
+                height: 75px;
+                width: 75px;
+
+                margin-bottom: 4rem;
+            }
+
+            &__heading{
+                font-size: 4rem;
+                
+                margin-bottom: 4rem;
+            }
+
+            &__description{
+                font-size: 2rem;
+                color: $color-black;
+
+                span{
+                    font-style: italic;
+                    text-align: right;
+                }
+            }
+        }
+
+        &--img-container{
+            width: 50%;
+            height: 475px;
+            margin: 0rem;
+
+            @include respond(tab-port){
+                width: 100%;
+            }
+        }
+
+        &--img{
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+        &__hr{
+            height: 1px;
+            border: none;
+            background: $color-primary-light-2;
+            margin: 1rem 0rem;
+            width: 100%;
+
+            @include respond(mbair){
+                width: 95vw;
+                // margin: auto;
+
+            }
+        }
+
+}

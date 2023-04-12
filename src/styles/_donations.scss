@@ -1,0 +1,125 @@
+.donations {
+    width: 100%;
+    height: 80vh;
+    background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light-1, 0.8),
+            rgba($color-primary-light-2, 0.8)),
+        url(../img/beach.jpg);
+    opacity: 0.8;
+    background-size: cover;
+    background-position: center;
+    ;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    &__backgroundContainer{
+        grid-column: 1/-1;
+        grid-row: 1/6;
+        height: 100vh;
+
+        background-color: $color-black;
+    }
+
+    &__heading {
+        grid-column: 1/-1;
+        align-self: center;
+        justify-self: center;
+        font-size: $font-size-subheading;
+    }
+
+    &__clarify-statement {
+
+        &--textContainer {
+            display: flex;
+            flex-direction: column;
+            grid-column: 1/-1;
+            grid-row-start: 2;
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            justify-items: center;
+            align-self: flex-start;
+            @include respond(sm-phone){
+                font-size: $font-size-subheading;
+            }
+        }
+
+        &--heading {
+            text-transform: uppercase;
+        }
+
+        &--text {
+            width: 80%;
+
+            font-size: $font-size-medium-regular;
+
+        }
+
+        &--disclaimer {
+            display: flex;
+            grid-column: 1/-1;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            width: 80%;
+            grid-row-start: 3;
+            font-size: $font-size-medium-regular;
+
+            transform: translateY(4rem);
+        }
+    }
+
+    &__buttonContainer {
+        grid-column: 1/span 4;
+        grid-row: 2/3;
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+
+    }
+
+    &__button {
+        color: $color-white;
+        // border: 1px solid black;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        background: $color-primary;
+        transform: translateY(10.5rem);
+        margin: 0rem 6rem;
+
+        &:hover {
+            background-color: black;
+            border: 1px solid $color-primary;
+            color: $color-white !important;
+        }
+
+        &--1 {
+            justify-self: flex-end;
+
+        }
+
+        &--2 {
+            justify-self: flex-start;
+
+        }
+    }
+
+    &__text {
+        display: flex;
+        grid-row-start: 4;
+        grid-column: 1/-1;
+        text-align: center;
+        color: black;
+        width: 80%;
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+
+    }
+}

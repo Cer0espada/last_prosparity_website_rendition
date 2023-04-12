@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "prosparity-98b7f",
+    "development": "prosparity-dev"
+  }
+}

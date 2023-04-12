@@ -1,0 +1,872 @@
+.main-mobile-header{
+
+    &.prosperettes{
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+
+            grid-column: 1/-1;
+            background-color: black;
+            height: 75vh;
+
+            @include respond(lg-phone) {
+                clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+                -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+            }
+    }
+}
+
+.mobile-prospsquare-container {
+        
+        grid-column: 1/-1;
+        grid-row: 7/14;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+
+        width: 100%;
+
+        align-content: center;
+        justify-content: center;
+        align-items: flex-start;
+        justify-items: center;
+
+
+        &>*{
+            margin: 4rem 0rem;
+        }
+
+        @include respond(chromebook){
+            grid-template-columns: repeat(3,1fr);
+        }
+
+        @include respond(tab-port){
+            column-gap: .5rem;
+        }
+
+        @media screen and (max-width:750px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond(lg-phone){
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        @include respond(md-phone){
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        
+
+            &:last-child {
+                margin-bottom: 4rem;
+            }
+            // padding-left: 5rem;
+        }
+    }
+
+.mobile-prospsquare{
+    
+    display: grid;
+
+    grid-template-rows: .3fr .6fr .1fr;
+    grid-template-columns: .8fr .2fr;
+
+    max-height: 400px;
+    height: 350px !important;
+    width: 350px !important;
+    min-height: 300px;
+    width: 341px;
+   
+
+    border: 1px solid $color-primary;
+    border-radius: 1rem;
+
+    background-image: linear-gradient(37deg ,rgba($color-primary-light-4, 0.2), rgba($color-primary-light-4, 0.1) );
+
+    padding-bottom: 5rem;
+    box-shadow: 0px 0px 75px 15px $color-primary;
+    
+
+    &__text-container{
+        grid-column-start: 1;
+        grid-row-start: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        padding-left: 5rem;
+        padding-top: 2rem;
+
+        align-content: space-around;
+        &--name{
+            font-size: $font-size-subheading;
+        }
+        &--title{
+            font-size: $font-size-large-regular;
+        }
+    }
+
+    &__img-container{
+        grid-row-start: 2;
+        display: flex;
+        max-width: 100%;
+        padding-left: 5rem;
+        max-height: 250px;
+        min-height: 250px;
+        min-width: 250px;
+        object-fit: cover;
+    }
+
+    &__img{
+        width: 100%;
+        min-height: 250px;
+        min-width: 250px;
+        object-fit: cover !important;
+
+
+    }
+
+    &__icon-container{
+        grid-column-start: 2;
+        grid-row: 2/3;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding-left: 1rem;
+        
+        &--icons{
+            color: $color-primary;
+            font-size: 5rem;
+            padding-top: 0rem;
+            padding-bottom: 4rem;
+            
+        }
+    }
+
+    &__facts-container{
+        grid-row-start: 3;
+        height: min-content;
+
+        padding-left: 5rem;
+        
+
+        &--age{
+
+        }
+
+        &--debt{
+
+        }
+
+        &--degrees{
+
+        }
+
+        &--quote-container{
+            font-style: italic;
+
+            &__drop-down{
+
+            }
+
+            &__quote{
+
+            }
+        }
+    }
+}
+
+.dropdown-menu-container{
+    position: relative;
+        
+
+    &__menu-trigger{
+        background: black;
+        border-radius: 8px;
+        position: absolute;
+        top: 40px;
+        right: -10px;
+        width: 8rem;
+        box-shadow: 0 1px 8px grey;
+        opacity: 1;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+        color: $color-white;
+
+        & ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        &--nav{
+            background: black;
+            color:rgba($color-white, 0.8) !important;
+            border-radius: 90px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            border: none;
+            vertical-align: middle;
+            transition: box-shadow 0.4s ease;
+
+            &__text{
+                font-size: $font-size-large-regular;
+            }
+
+            &:hover {
+                color: $color-primary;
+            }
+
+            & span {
+                vertical-align: middle;
+                font-size: 1.3rem;
+
+            }
+            &.active {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(0);
+                        z-index: 20;
+                    }
+        }
+    }
+
+    .dropdown-menu__item{
+        
+    }
+}
+
+.mobile-prosp-cards{
+
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+
+    max-width: 348px;
+    max-height: 500px;
+    min-width: 250px;
+    min-height: 250px;
+
+    padding-bottom: 4rem;
+
+    //  box-shadow: 5px 5px 20px 1px $color-primary;
+    &__img-container{
+        width: 100%;
+
+        display: flex;
+
+        object-fit: cover;
+    }
+
+        &__img{
+            width: 100%;
+            min-width: 250px;
+            min-height: 250px;
+            object-fit: cover;
+            object-position: center center;
+            max-height: 250px;
+
+            @include respond(md-phone){
+                max-width: 400px;
+            }
+        }   
+    
+    &__bottom-container{
+        
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-between;
+        padding-top: 2rem;
+        width: 100%;
+        padding: 1rem;
+    
+        &--text-container{
+            align-content: space-between;
+   
+
+            &__heading{
+                font-size: $font-size-larger-text;
+                font-weight: 600;
+            }
+
+            &__title{
+                font-size: $font-size-large-regular;
+            }
+        }
+    }
+
+    &__svg-container-link{
+
+        max-width: 40px;
+    }
+
+    &__svg{
+
+    }
+}
+
+////////////////////////////////////////////////////@at-root
+////////////////////////////////////// prosperette pages 
+///////////////////////////////////individual prosperette pages
+////////////////////////////////individual prosperette page
+
+.main-mobile-header.prosperette-page{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    height: 150vh;
+    @include respond(desktop){
+        height: 120vh;
+    }
+
+    transform: translate3d(0,0,0); // prevents skewing from main class
+
+
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    // -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+    @include respond(laptop){
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        // -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    }
+
+    @include respond(tab-land){
+         height: 100vh;
+    }
+
+    @include respond(tab-port){
+        clip-path: polygon(0 0, 100% 0, 100% 68vh, 0 100%);
+    // -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 68vh, 0 100%);
+       
+    }
+
+
+    @include respond(lg-phone){
+         height: 90vh;
+    }
+    
+
+    .prosperette-page{
+
+        &__svg{
+            position: absolute;
+            top: 20px;
+            left: 10px;
+
+            &:hover{
+                cursor: pointer;
+                padding: .2rem;
+
+            }
+        }
+    }
+    .prosperette-page-header{
+        height: 40vh;
+
+        @include respond(desktop) {
+            margin-top: -10rem;
+        }
+
+        @include respond(laptop) {}
+
+        @include respond(lg-phone){
+
+        }
+
+        &__content-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -28rem;
+
+            *>{
+                margin-bottom: 3rem;
+            }
+            
+            @include respond(desktop){
+
+            }
+
+            @include respond(laptop){
+                margin-top: 0rem;
+
+            }
+        }
+
+        &__img-container{
+            max-width: 100vw;
+            // padding: 15rem 0rem;
+            // background-color: $color-primary;
+            // background-image: radial-gradient( $color-primary 20%, transparent 80%);
+
+            // -webkit-mask:radial-gradient(circle , transparent, $color-primary 50%);
+            // mask:radial-gradient(circle, transparent, $color-primary 50%);
+            // background: radial-gradient(circle, $color-primary 20%,black 50%);
+            margin-top: 35rem;
+            
+            @include respond(chromebook){
+                margin-top: 20rem ;
+            }
+            
+            @include respond(lg-phone){
+                margin-top: 12rem;
+            }
+            
+            @include respond(md-phone){
+                padding:2rem 0rem;
+                margin-top: 14rem;
+            }
+        }
+
+        &__img{
+            width: 100%;
+            max-width: 30vw;
+            border-radius: 50%;
+            box-shadow: 0px 0px 75px 15px $color-primary;
+            @include respond(md-phone) {
+                max-width: 60vw;
+            }
+        }
+    
+
+    &__text-container{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        color: $color-white;
+        &--heading{
+            font-size: $font-size-heading;
+            color: $color-white;
+        }
+
+        &--title{
+
+            font-size: $font-size-larger-text;
+            max-width: 80%;
+            @include respond(lg-phone){
+                font-size: 2rem;
+            }
+            color: $color-white;
+        }
+
+        &--icon-container{
+            margin-bottom: 40rem;
+
+            @include respond(lg-phone){
+                margin-bottom: 8rem;
+            }
+            :nth-child(2){
+                padding: 0rem 4rem;
+            }
+            &--icons{
+                font-size: 6rem;
+                color: $color-primary;
+
+            }
+        }
+    }
+
+    }
+}
+.prosperette-page{
+    &-facts{
+        grid-column: 1/-1;
+        grid-row: 6/10;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+
+        
+        width: 100%;
+
+        height: 105vh;
+
+        margin-top: 10rem;
+
+        @include respond(tab-port){
+            height: 82vh;
+        }
+        @include respond(sm-phone){
+            height: 90vh;
+        }
+
+        &__content-container{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-content: center;
+            justify-content: space-around;
+
+            width: 80%;
+            height: 80%;
+        }
+        &__about-me-container{
+
+            @include respond(md-phone){
+                margin-top: 6rem;
+            }
+            &--heading{
+                color:rgba(black, .8);
+
+                font-size: $font-size-subheading;
+                
+            }
+
+            &--grid{
+
+                display: grid;
+
+                grid-template-columns: .08fr .9fr;
+                grid-template-rows: repeat(3, minmax(max-content, 10vh));
+
+                @include respond(tab-port){
+                    grid-template-columns: .15fr .8fr;
+                    grid-template-rows: repeat(3, minmax(max-content, 5vh));
+
+                }
+                
+                
+                align-content: center;
+                align-items: flex-start;
+
+                font-size: $font-size-larger-text;
+
+                &__icon{
+                    grid-column-start: 1;
+                    font-size: $font-size-subheading;
+                    text-align: center;
+                }
+
+                &__text{
+                    grid-column-start: 2;
+
+                    &--age{
+                        grid-column-start: 2;
+                        grid-row-start: 1;
+                    }
+
+                    &--degree{
+                        grid-column-start: 2;
+                        grid-row-start: 2;
+                    }
+
+                    &--location{
+                        grid-column-start: 2;
+                        grid-row-start: 3;
+                    }
+                }
+            }
+
+            &--age{
+                font-size: $font-size-larger-text;
+            }
+
+            &--degree{
+                font-size: $font-size-larger-text;
+            }
+
+            &--location{
+                font-size: $font-size-larger-text;
+            }
+        }
+
+        &__aspirations-container{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-self: center;
+
+            // margin-top: 4rem;
+            // margin-bottom: -4rem ;
+
+            // padding:2rem 0rem;
+
+            // @include respond(md-phone){
+            //     margin-bottom: 4rem;
+            // }
+
+            @include respond(md-phone){
+                margin-top: 2rem    ;
+            }
+            &--text-container{
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                align-self: center;
+                
+                :last-child{
+                    padding-bottom: 0rem;
+                }
+                                    
+                &__text{
+                    line-height: 1.2;
+                    font-size: $font-size-larger-text;
+                    margin-left: 3rem;
+                    padding: 1rem 0rem;
+
+                    @include respond(lg-phone){
+                        line-height: inherit;
+                    }
+                    
+                    
+                }
+            }
+            
+       
+            &--heading{
+                color:rgba(black,.8);
+                font-style: italic;
+
+                font-size: $font-size-subheading;
+
+            }
+
+            &--quote{
+                font-size: $font-size-larger-text;
+            
+            }
+        }
+    }
+
+    &-student-debt{
+        grid-column: 1/-1;
+        grid-row: 10/14;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        
+        justify-content: center;
+
+        height: 130vh;
+        transform: skewY(-10deg);
+
+        padding: 4rem 0rem;
+
+        @include respond(tab-port){
+            transform: skewY(-15deg);
+            height: 80vh;
+        }
+        
+
+        @include respond(md-phone){
+            transform:skewY(-18deg);
+        }
+
+        @include respond(sm-phone) {
+            transform: skewY(-21deg);
+            height: 120vh;
+        }
+        &__content-container{
+
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-content: space-around;
+            width: 80%;
+            height: max-content;
+            color: $color-white;
+            
+            transform: skewY(10deg);
+
+            
+
+            @include respond(tab-port){
+                transform: skewY(15deg);
+            }
+
+            @include respond(md-phone) {
+                transform: skewY(18deg);
+            }
+
+            @include respond(sm-phone) {
+                transform: skewY(21deg);
+            }
+        }
+
+        
+        &__header{
+            align-self: center;
+
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            &--heading{
+                font-size: $font-size-subheading;
+
+                // @include respond(tab-port){
+                //     font-size: $font-size-larger-text;
+                // }
+                
+                
+                padding-bottom: 1rem;
+            }
+            // &--number{
+            //     font-size: 8rem;
+            //     color: $color-primary;
+            //     font-weight: 900;
+            // }
+        }
+
+        &__avg-student-debt-flex-container {
+            display: flex;
+            width: 100%;
+            align-content:space-around ;
+            justify-content: flex-start;
+
+            & >*{
+                margin-right: 1rem;
+            }
+
+            &:last-child{
+                margin-right:0rem;
+            }
+
+            .default-person-debt {
+                
+                min-width: 10vw;
+                min-height: 2vh;
+
+                background-color: $color-primary-light-2;
+
+
+                
+                &__text {
+                    font-size: $font-size-large-regular;
+                }
+            }
+
+        }
+
+        &__prosperette-student-debt-flex-container {
+            display: flex;
+
+            margin-top: 1rem;
+
+
+            &>* {
+                margin-right: 1rem;
+            }
+
+            &:last-child {
+                margin-right: 0rem;
+            }
+
+            .prosperette-individual-debt {
+
+                min-width: 18vw;
+                min-height: 2vh;
+
+                background-color: $color-primary;
+
+                &.first{
+                    min-width: 18vw;
+                }
+                &.second{
+                    min-width: 25vw;
+                }
+                &.third{
+                    min-width: 30vw;
+                }
+                &.fourth{
+                    min-width: 35vw;
+                }
+                &.fifth{
+                    min-width: 40vw;
+                }
+
+                &__text {
+                    font-size: $font-size-large-regular;
+                }
+            }
+        }
+        &__quote{
+            font-style: italic;
+
+            font-size: $font-size-larger-text;
+
+            padding: 2rem 0rem;
+
+            @include respond(tab-port){
+                font-size: $font-size-large-regular;
+            }
+        }
+        &__img-container{
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            align-items: center;
+            justify-items: flex-end;
+            justify-self: flex-end;
+            justify-content: flex-end;
+            
+            
+
+            &--caption{
+
+                margin-right: 0.5rem;
+
+                @include respond(tab-port){
+                    margin-right: 1rem;
+                    padding-right:1rem;
+
+                    font-size: $font-size-larger-text;
+                }
+              
+            }
+        }
+
+        &__img{
+
+            max-width: 75px;
+            max-height: 75px;
+            object-fit: cover;
+            object-position: center center;
+            
+            @include respond(tab-port){
+                max-width: 50px;
+            }
+            
+
+            border-radius: 50%;
+        }
+
+
+    }
+}
+.prosperette-page__mailinglist {
+    grid-column: 1/-1;
+    grid-row: 16/17;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+
+    margin-right: 0rem;
+
+
+
+}

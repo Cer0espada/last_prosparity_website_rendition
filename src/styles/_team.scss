@@ -1,0 +1,369 @@
+.mobile-team-container{
+
+    grid-column: 1/-1;
+    grid-row: 7/10;
+
+    display: grid;
+    
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
+    align-content: center;
+    justify-items: center;
+
+
+    @include respond(tab-port){
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto-fit, 1fr);
+    }
+    @include respond(lg-phone){
+        grid-template-rows: repeat(auto-fit, 400px);
+        row-gap: 2rem;
+        grid-template-columns: auto;
+
+    }
+    
+ 
+    
+}
+
+
+.team{
+
+    .main-mobile-header {
+
+        &__textcontainer {
+
+            &--maintitle {
+                font-size: $font-size-heading;
+            }
+
+            &--caption{
+                font-size: $font-size-larger-text;
+                
+            }
+        }
+    }
+}
+.mobile-cards {
+
+    &.team-cards {
+
+
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+
+        max-width: 375px;
+        max-height: 500px;
+        min-width: 300px;
+        max-width: 300px;
+        overflow-y: hidden;
+        // padding-bottom: 4rem;
+
+        &__img-container {
+            width: 100%;
+            
+            object-fit: cover;
+            min-height: 348px;
+            max-height: 348px;
+            object-fit: cover;
+            overflow-y: hidden;
+        }
+
+        &__img {
+            display: flex;
+            width: 100%;
+            height: auto;
+            max-height: 320px;
+            min-height: 320px;
+            object-fit: cover;
+            overflow-y: hidden;
+            //  object-position: 50% 0%;
+        }
+
+        &__bottom-container {
+
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-between;
+            padding-top: 4rem;
+            margin-top: -3.5rem;
+            &--text-container {
+                align-content: space-between;
+
+
+                &__heading {
+                    display: flex;
+                    font-size: $font-size-larger-text;
+                    font-weight: 600;
+                
+                }
+
+                &__title {
+                    font-size: $font-size-large-regular;
+                }
+            }
+        }
+
+        &__svg-container-link {
+
+            max-width: 40px;
+        }
+
+        &__svg {}
+
+    }
+}
+
+.initiatives {
+
+    grid-row: 9/12;
+    grid-column: 1/-1;
+
+    display: flex;
+    flex-direction: column;
+
+
+
+    margin-top: 5rem;
+    padding-left: 4rem;
+
+    &__content-container {
+        display: flex;
+        flex-direction: column;
+
+        width: 90%;
+        align-self: center;
+    }
+
+    &__heading {
+        font-size: $font-size-larger-text;
+        align-self: start;
+    }
+}
+
+.make-a-difference{
+    grid-row: 12/14;
+    grid-column: 1/-1;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+
+    margin: 4rem 0rem;
+
+    &__content-container{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 80%;
+    }
+
+    &__text{
+        font-size: $font-size-larger-text;
+
+        span{
+            color: $color-primary;
+            text-decoration: underline;
+        }
+    }
+}
+
+.mobile-mailinglist-container-team{
+    grid-row: 14/15;
+    grid-column: 1/-1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+
+    margin-right: 0rem;
+    
+}
+///////////////////////////////////////////////////////////////////@at-root
+//////////////////////////////////////////////////Team page
+
+.main-mobile-header.team-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 68vh, 0 100%);
+    // -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 68vh, 0 100%);
+
+   
+    transform: translate3d(0, 0, 0);
+
+    .team-page {
+
+        &__svg {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+
+            &:hover {
+                cursor: pointer;
+                padding: .2rem;
+
+            }
+        }
+    }
+
+    .team-page-header {
+
+        &__img-container {
+            display: flex;
+            max-width: 100vw;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform: translate3d(0, 0, 0);
+            // border-radius: 50%;
+            // padding: 15rem 0rem;
+            // background-color: $color-primary;
+            // background-image: radial-gradient( $color-primary 20%, transparent 80%);
+
+            // -webkit-mask:radial-gradient(circle , transparent, $color-primary 50%);
+            // mask:radial-gradient(circle, transparent, $color-primary 50%);
+            // background: radial-gradient(circle, $color-primary 20%,black 50%);
+            
+           margin-bottom: 8rem;
+           
+            object-fit: cover;
+
+            margin-top: 5rem;
+
+            ///Figure out why this isnt working
+            transform: translateY(10rem);
+
+
+            @include respond(lg-phone) {
+                margin-top: 12rem;
+            }
+
+            @include respond(md-phone) {
+                // padding: 5rem;
+                margin-top: 8rem;
+            }
+        }
+
+        &__content-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin-top: -20rem;
+
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transform: translate3d(0,0,0);
+
+        
+        }
+
+        &__img {
+            display: flex;
+             width: 100%;
+            height: auto;
+            border-radius: 60%;
+            box-shadow: 0px 0px 75px 15px $color-primary;
+
+            object-fit: cover;
+            overflow: hidden;
+
+           
+        }
+
+
+        &__text-container {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+
+            color: $color-white;
+
+            //figure out why this isnt being adjusted by flexbox
+            transform: translateY(5rem);
+
+            &--heading {
+                font-size: $font-size-heading;
+                color: $color-white;
+
+                text-align: center;
+                
+                align-content: center;
+
+                
+            }
+
+            &--title {
+                color: $color-white;
+                font-size: $font-size-larger-text;
+            }
+
+            &--icon-container {
+                display: flex;
+
+                width: 50%;
+                justify-content: space-around;
+                
+                // :nth-child(2) {
+                //     padding: 0rem 4rem;
+                // }
+
+                &--icons {
+                    font-size: 6rem;
+                    color: $color-primary;
+
+                }
+            }
+        }
+
+    }
+}
+
+.team-page-summary{
+    grid-column: 1/-1;
+    grid-row: 7/12;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+
+    height: 100%;
+
+    &__content-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        width: 80%;
+        height: 100%;
+
+        margin: 2rem 0rem;
+    }
+
+    &__text-container{
+
+        &--text{
+            font-size: $font-size-larger-text;
+
+        }
+        
+    }
+}

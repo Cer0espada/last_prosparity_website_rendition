@@ -1,0 +1,136 @@
+
+
+// @mixin respond-page-change($page){
+
+//     @if $page == 'involvement'
+// }
+
+//MEDIA QUERY MANAGER
+
+/*
+0px--600px: Phone
+600px -900px: Tablet Portrait
+900px - 1200px: Tablet Landscape
+1200px - 1800px: *normal styles Desktop
+1800+ : big projector screens
+
+we will use EMs since they are not changed when the user changes the default fontsize
+1em = 16px 
+*/
+
+@mixin respond-phone{
+    @media(max-width: 600px){ @content};
+}
+
+@mixin respond($breakpoint){
+    @if $breakpoint == sm-phone{
+        @media(max-width: 21.875em){
+            @content
+        }
+    }; // 350px
+
+    @if $breakpoint == md-phone{
+        @media(max-width:28.125em){
+            @content
+        }
+    };//450px
+    @if $breakpoint == lg-phone{
+        @media(max-width: 37.5em){@content} 
+    }; //600px
+    @if $breakpoint == tab-port {
+        @media(max-width: 56.25em) {
+            @content
+        }
+    }; //900px
+    @if $breakpoint==mbair {
+        @media(max-width: 68.75em) {
+            @content
+        };
+    } // 1000px
+    @if $breakpoint==chromebook {
+        @media(max-width: 62.5em) {
+            @content
+        };
+    }//1100px
+    @if $breakpoint==tab-land {
+        @media(max-width: 75em) {
+            @content
+        }
+    }; //1200px
+
+    @if $breakpoint==laptop{
+        @media(max-width: 90em){
+            @content
+        }
+    }; //1400px
+
+    @if $breakpoint==desktop{
+        @media(max-width: 112.5em){
+            @content
+        }
+    }; //1800px
+   
+    @if $breakpoint==big-desktop {
+        @media(min-width: 112.5em) {
+            @content
+        }
+    }; // 1800px +
+}   
+
+@mixin browserSpecific($browser){
+    @if $browser == (chrome){
+        @supports (-webkit-appearance:none) and (not (overflow:-webkit-marquee)) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)){
+            @content
+        }
+    };
+    @if $browser == (safari){
+         _::-webkit-full-page-media,
+         _:future,
+         :root .safari_only {
+             @content
+         }
+    };
+
+    @if $browser == firefox{
+        @-moz-document url-prefix() {
+            @content
+        }
+    };
+
+
+}
+
+@mixin targetChrome{
+    @media screen and (-webkit-min-device-pixel-ratio:0){
+        @content
+    }
+};
+
+@mixin targetFirefox{
+    @-moz-document url-prefix() {
+        @content
+    }
+};
+
+@mixin targetSafari{
+     @media not all and (min-resolution:.001dpcm) {
+        @supports (-webkit-appearance:none) {
+
+            @content
+        }
+    }
+    };
+
+//Aspect ratio Mixins
+
+// Mixin for ratio dimensions    
+@mixin viewportRatio($x, $y) {
+    width: 100vw;
+    height: $y * 100vw / $x;
+    max-width: $x / $y * 100vh;
+    max-height: 100vh;
+};
+
+@mixin translatePerecentage($screenSize, $amount){
+    transform: translateX((($screenSize * 0.1) + $amount) + rem);
+}

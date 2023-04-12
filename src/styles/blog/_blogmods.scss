@@ -1,0 +1,235 @@
+.blog-mods-container{
+    max-width: 275px;
+    min-width: 275px;
+    width: 275px;
+    max-height: 400px;
+    min-height: 400px;
+    height: 400px;
+    box-shadow: 0px 2px 10px $color-primary-light-2;
+    box-sizing: border-box;
+
+}
+.blog-mods{
+
+    &__content-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        flex: 0 0 auto;
+    }
+
+    &__img-container{
+        
+        width: 100%;
+        max-height: 160px !important;
+        height: 160px;
+        margin: 0rem;
+        margin-bottom: 4rem;
+        align-self: center;
+    }
+    
+    
+    &__img{
+            width: 100%;
+            height: 100%;
+            
+            object-fit: cover;
+            object-position: center center;
+
+        }
+//double nested containers to get left alignment correct 
+
+    &__fig-caption-container-first{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__fig-caption-container-second {
+        
+        flex-direction: column;
+        text-align: left;
+        width: 90%;
+
+        figcaption {
+            color: $color-green;
+            text-transform: uppercase;
+            text-align: left;
+        }
+    }
+
+    &__bottom-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        width: 90%;
+
+    }
+
+    &__main-heading{
+        font-size: 2rem;
+        color: black;
+    }
+
+    &__subheading{
+        font-size: 1.5rem;
+        color: grey;
+
+    }
+
+    &__author-container{
+        display: flex;
+
+
+  
+        &--img-container{
+            max-width: 40px;
+            max-height: 40px;
+            border-radius: 50%;
+        }
+
+        &--img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            border-radius: 50%;
+        }
+
+        &--caption{
+                color: $color-black;
+                margin-left: 1rem;
+        }
+
+    }
+
+    
+}
+
+.blog-mods-long-container {
+    display: flex;
+    max-width: 100%;
+    min-width: 275px;
+    // width: 800px;
+    max-height: 400px;
+    min-height: 400px;
+    height: 400px;
+    box-shadow: 0px 2px 10px $color-primary-light-2;
+    box-sizing: border-box;
+
+}
+
+.blog-mods-long {
+
+    &__img-container {
+
+        width: 50%;
+        max-height: 100%;
+        height: 100%;
+        margin: 0rem;
+  
+        align-self: center;
+        justify-content: center;
+    }
+
+    &__content-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            // align-items: center;
+            // flex: 0 0 auto;
+            justify-self: center;
+            align-self: center;
+            // justify-content: space-around;
+    }
+
+    &__category--heading{
+        display: flex;
+        font-size: 2rem;
+        text-align: left;
+        width: 100%;
+        text-transform: uppercase;
+        justify-content: flex-start;
+        justify-self: flex-start;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        // height: 400px;
+        object-fit: cover;
+        object-position: center center;
+
+    }
+   
+
+    //double nested containers to get left alignment correct 
+
+    &__right-container{
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+        width: 46%;
+
+        padding-top: 1rem;
+
+    }
+    &__main-heading {
+        font-size: 2.5rem;
+        color: black;
+        align-self: flex-start;
+        width: 100%;
+        text-align: left;
+    }
+
+    &__subheading {
+        font-size: 2rem;
+        color: $color-black;
+        // text-align: left;
+    }
+
+    &__author-container {
+        display: flex;
+        // position: absolute;
+        width: 100%;
+        justify-content: left;
+        align-self:flex-end ;
+        align-content: flex-end;
+        transform: translateY(11rem);
+        // @include respond(tab-land){
+        //     transform: translateY(18rem);
+        // }
+        
+        
+
+        
+
+        &--img-container {
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 50%;
+        }
+
+        &--img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            border-radius: 50%;
+        }
+
+        &--caption {
+            color: $color-black;
+            margin-left: 1rem;
+        }
+
+    }
+
+
+}

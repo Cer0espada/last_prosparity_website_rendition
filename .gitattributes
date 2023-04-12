@@ -1,0 +1,20 @@
+# -*- mode: conf -*-
+#
+# specify which files to encrypt using [git-crypt](https://www.agwa.name/projects/git-crypt/)
+
+.env-cmdrc.json filter=git-crypt diff=git-crypt
+secrets.txt filter=git-crypt diff=git-crypt
+
+user_pubkey.gpg filter=git-crypt diff=git-crypt
+
+*.gpg filter=git-crypt diff=git-crypt
+*.env filter=git-crypt diff=git-crypt
+
+#
+# Certificate private keys
+# *.key               filter=git-crypt diff=git-crypt
+# Private document/folders
+# *PRIVATE*           filter=git-crypt diff=git-crypt
+# subfolder/**/*      filter=git-crypt diff=git-crypt
+
+.gitattributes !filter !diff

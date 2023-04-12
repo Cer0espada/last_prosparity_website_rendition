@@ -1,0 +1,123 @@
+.sign-up-container{
+    grid-row: 1/20;
+    grid-column: 1/-1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+
+
+    .sign-up{
+        &__content-container{
+            max-width: 75em;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-items: center;
+        }
+
+        &__heading{
+            font-size: $font-size-subheading;
+            
+        }
+
+        &__firebase-auth-container{
+            display: flex;
+            flex-direction: column;
+
+            #firebaseui-container{
+
+                display: flex;
+                margin:1rem 0rem;
+                list-style: none;
+                ul{
+                    list-style-type:none !important;
+                    list-style:none !important;
+                }
+            }
+            
+        }
+
+        &__form{
+
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            height: 50vh;
+
+            width: 60vw;
+            max-width: 75em;
+
+
+            background-color: $color-primary-light-2;
+            border: 1px solid $color-primary;
+
+            &>*{
+                margin: .5rem 0rem;
+            }
+
+            input{
+                width: 50%;
+
+                border: 1rem;
+            }
+        }
+
+        &__button{
+            border-radius: 1rem;
+            border: 1px solid $color-primary;
+            width: 50%;
+
+            padding: .2rem .1rem;
+
+            cursor: pointer;
+
+            &.exit{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                max-width: 30%;
+                color: black;
+                margin: 1rem 0rem;
+            }
+
+            &.blog{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                max-width: 30%;
+                color: white;
+                background-color: $color-primary;
+                margin: 1rem 0rem;
+            }
+            .google{
+                color: black;
+                background-color:$color-green;
+            }
+
+            .facebook{
+                color: $color-white;
+                background-color: $color-blue;
+            }
+
+            .twitter{
+                color: $color-white;
+                background-color: skyblue;
+            }
+        }
+    }
+}
